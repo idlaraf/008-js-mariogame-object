@@ -2,14 +2,14 @@
   width: 100px;
   height: 100px;
   position:absolute;
-  bottom: 20%;
-  left: 10%;
+  bottom: 9%;
+  left: 20%;
   background-image: url('mario.webp');
   background-size: cover;
 }
 
 .jump{
-  animation: jump 1000ms forwards;
+  animation: jump 2000ms forwards;
 }
 
 
@@ -18,7 +18,37 @@
       bottom: 60%;
     }
     100%{
-      bottom: 20%;
+      bottom: 9%;
       transform: rotate(-360deg);
     }
+}
+ 
+.back{
+
+  position: absolute;
+  background-image: url(back.png);
+ background-size: cover;
+ animation: move 2s  linear infinite; 
+min-height: 100vh;
+}
+
+@keyframes  move {
+ 0% {
+   background-position: 0px 0;
+ }
+ 100% {
+   background-position: -2000px 0;
+ }
+
+}
+
+.enemy{
+  position: absolute;
+  background-image: url(proiettile.webp);
+ background-size: cover;
+width: 100px;
+height: 100px;
+ animation: move 2s  linear infinite; 
+
+
 }
