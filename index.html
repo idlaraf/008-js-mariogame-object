@@ -12,6 +12,8 @@
   <div class="character"></div>
 
   <div class="enemy"></div>
+
+  <div class="power"></div>
   
 
   <script>
@@ -25,7 +27,22 @@
           character.classList.remove('jump')
         }, 2000 )
       }
+      if (event.code == "Space"){
+        character.classList.add('power')
+        setTimeout( () => {
+          character.classList.remove('power')
+        }, 8000 )
+      }
     }
+
+    function boxcollision (obect1, object2) {
+      if (
+        object1.x + object1.width >= objet2.x &&
+        object1.x <= object2.x + object2.width &&
+        object1.y +
+      )
+    }
+    
   </script>
 </body>
 </html>
