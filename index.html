@@ -18,6 +18,7 @@
 
   <script>
     const character = document.querySelector('.character')
+    const enemy = document.querySelector('.enemy')
 
     document.onkeydown = (event) => {
       console.log(event.code)
@@ -25,7 +26,7 @@
         character.classList.add('jump')
         setTimeout( () => {
           character.classList.remove('jump')
-        }, 2000 )
+        }, 4000 )
       }
       if (event.code == "Space"){
         character.classList.add('power')
@@ -35,12 +36,21 @@
       }
     }
 
-    function boxcollision (obect1, object2) {
+    setInterval(() => {
+      if (boxcollision(character,enemy)){
+        location.href = "lost.html"
+      }
+    },30)
+
+    function boxcollision (object1, object2) {
       if (
         object1.x + object1.width >= objet2.x &&
         object1.x <= object2.x + object2.width &&
-        object1.y +
+        object1.y + object1.height >= object2.y &&
+        object1.y <= object2.y + object2.height
       )
+
+      return true
     }
     
   </script>
